@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import ArticleDetails from './components/ArticleDetails';
-import CreateArticle from './components/CreateArticle';
-import LoginForm from './users/LoginForm';
-import MainFeed from './components/MainFeed';
+import ArticleDetails from './components/articles/ArticleDetails';
+import CreateArticle from './components/articles/CreateArticle';
+import Home from './components/Home';
+import LoginForm from './components/users/LoginForm';
+import MainFeed from './components/articles/MainFeed';
 import NavBar from './components/NavBar';
 import NotFound from './components/404';
-import SignUpForm from './users/SignUpForm';
+import SignUpForm from './components/users/SignUpForm';
 import './App.css';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
+        <Route path='/' element={<Home />}/>
         <Route path='/login' element={<LoginForm />}/>
         <Route path='/signup' element={<SignUpForm />}/>
         <Route path='/newArticle' element={<CreateArticle />} />
