@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ArticleDetails from './components/ArticleDetails';
 import CreateArticle from './components/CreateArticle';
+import Home from './components/Home';
 import LoginForm from './users/LoginForm';
 import MainFeed from './components/MainFeed';
 import NavBar from './components/NavBar';
@@ -13,8 +14,9 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
+        <Route path='/' element={<Home />}/>
         <Route path='/login' element={<LoginForm />}/>
-        <Route path='/signup' element={<SignUpForm />}
+        <Route path='/signup' element={<SignUpForm />}/>
         <Route path='/newArticle' element={<CreateArticle />} />
         <Route path='/articles' element={<MainFeed />} />
         <Route path='/articles/:articleId' element={<ArticleDetails />} />
