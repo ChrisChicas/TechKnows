@@ -1,30 +1,23 @@
-import LoginForm from './users/LoginForm';
-import SignUpForm from './users/SignUpForm';
-import { BrowserRouter, Route, Router, Routes } from 'react-router-dom';
-import Navigation from './Navigation';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ArticleDetails from './components/ArticleDetails';
+import CreateArticle from './components/CreateArticle';
+import MainFeed from './components/MainFeed';
+import NavBar from './components/NavBar';
+import NotFound from './components/404';
 import './App.css';
 
 function App() {
   return (
-
-      <div className=''>
-        <h1 className='header'>TechKnows Article</h1>
-        <Navigation />
-      <BrowserRouter>
-      <div className="App">
-       
-      </div>
-      
-      <div className="display">
-          <Routes>
-            <Route path="/"  element={LoginForm }/>
-            <Route path="/events" element={SignUpForm}/>
-          </Routes>
-      </div>
-    </BrowserRouter>
-</div>
-  )
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path='/newArticle' element={<CreateArticle />} />
+        <Route path='/articles' element={<MainFeed />} />
+        <Route path='/articles/:articleId' element={<ArticleDetails />} />
+        <Route path='*' element={<NotFound />}/>
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
