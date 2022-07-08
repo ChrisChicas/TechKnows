@@ -1,6 +1,21 @@
-import React from 'react'
+import { useState } from "react"
 
 const SignUpForm = () => {
+	const [username, setUserName] = useState("")
+	const [password, setPassword] = useState("")
+	const [error, setError] = useState(false)
+  
+	const verification = async e => {
+	  e.preventDefault()
+	  try {
+		// fetch request to get user data w/ username
+		//compare passwords
+		//redirect page
+	  } catch (error) {
+		//setError true, reset username/password values
+	  }
+	}
+
   return (
     <main>
 			<h1>Sign Up</h1>
