@@ -12,6 +12,10 @@ import './App.css';
 
 function App() {
   return (
+    <div>
+    <div>
+      <h1 className='header'>TeckKnows Articles</h1>
+    </div>
     <Router>
       <NavBar />
       <Routes>
@@ -25,6 +29,7 @@ function App() {
         <Route path='*' element={<NotFound />}/>
       </Routes>
     </Router>
+    </div>
   );
 }
 
