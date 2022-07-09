@@ -6,6 +6,8 @@ export default function ArticleDetails(){
     // const data = await response.json()
     //return article data
     return(
-        <h1>Article Details For Article {params.articleId}</h1>
+        <main>
+            <h1>Article Details For Article {params.articleId}</h1>    
+        </main>       
     )
 }
