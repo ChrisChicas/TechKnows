@@ -10,7 +10,7 @@
 nav {
     background-color:rgb(192, 201, 204) ;
     box-shadow: 2px 2px 2px 2px blue;
-    height: 9vh;
+    height: 10vh;
     ul {
         list-style-type: none;
         margin: 0;
@@ -20,18 +20,19 @@ nav {
         text-align: center;
         color: blue;
         font-size: 2em;
-        height: 6vh;
-        width: 10vw;
         padding-left: 2px;
         padding-bottom: 3px;
         border-radius: 5px;
         transition: all .4s ease-in-out;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, .1);
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
+        padding-top: 4px;
+        position: relative;
+        bottom: 3px;
         a:hover{
             cursor: default;
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             border: 1px solid blue;
-            box-shadow: 4px 4px 15px white;
+            box-shadow: 1px 1px 1px 7px white;
             background-color: cyan;
         }
         display: inline;
@@ -40,6 +41,7 @@ nav {
         a {
             color: white;
             text-decoration: none;
+            border: 2px solid white;
             height: 6vh;
             width: 10vw;
         }
@@ -47,7 +49,7 @@ nav {
 }
 
 .homejs{
-    height: 100vh;
+    height: 135vh;
     width: 100vw;
     padding-top: 50px;
     align-items: center;
@@ -77,3 +79,28 @@ nav {
     }
     
 }
+
+.footer{
+    width: 100vw;
+    height: 25vh;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(47, 99, 122);
+    padding-top: 50px;
+    i{
+        font-size: 1.2rem;
+        color: white;
+        pointer-events: none;
+      
+    }
+    h3{
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 1.5em;
+        color: white;
+      } 
+}
+
+
+
