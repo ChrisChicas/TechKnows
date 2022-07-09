@@ -1,23 +1,29 @@
 import { useState } from "react"
+import { useParams } from "react-router-dom"
 
-export default function CreateArticle(){
+export default function EditArticle(){
+    let params = useParams()
+    // const response = await fetch(url/articles/params.articleId)
+    // const data = await response.json()
+    //setTitle(data.title), setContent(data.content)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [error, setError] = useState(false)
 
-    const postArticle = async e => {
+    const updateArticle = async e => {
         e.preventDefault()
         try {
-          // fetch request to post article content
+          // fetch request to update article content
           //redirect page to main feed or to article details
         } catch (error) {
           //if article title or content empty, setError true, reset username/password values
         }
       }
 
-    return(
+
+    return (
         <main>
-            <h1>Create Article</h1>
+            <h1>Edit Artcile {params.articleId}</h1>
             {error ? <div className="alert alert-danger alert-dismissible" role="alert">
                 Article Title or Content Cannot be Empty.
                 <button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
@@ -25,7 +31,7 @@ export default function CreateArticle(){
                 </button>
                 </div> 
                 : null}
-            <form onSubmit={postArticle}>
+            <form onSubmit={updateArticle}>
                     <div className="col-sm-2 form-group">
                         <label htmlFor='title'>Article Title</label>
                         <input type="text" value={title} id='title' className="form-control" placeholder="Enter Title" onChange={e => {setTitle(e.target.value)}} required/>
