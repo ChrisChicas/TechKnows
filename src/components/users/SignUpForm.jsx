@@ -31,12 +31,12 @@ const SignUpForm = () => {
 	})
 	if (response.status === 200){
 		const data = await response.json()
-		console.log(data)
 		setCurrentUser(data.user)
 		navigate("/")
 	} else {
 		setError(true)
-
+		setUserName("")
+		setPassword("")
 	}
 	}
 
