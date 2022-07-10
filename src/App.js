@@ -17,7 +17,7 @@ function App() {
   const [loggedOut, setLoggedOut] = useState(false)
   return (
     <div>
-      <h1 className='header'>TeckKnows Articles</h1>
+      <h1 className='header'>TechKnows Articles</h1>
       <>{loggedOut ? <div className="alert alert-info alert-dismissible m-auto" role="alert">
 									Successfully logged out.
 									<button type="button" className="close" onClick={() => {setLoggedOut(false)}} data-dismiss="alert" aria-label="Close">
