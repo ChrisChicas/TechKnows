@@ -14,7 +14,7 @@ function App() {
   return (
     <div>
     <div>
-      <h1 className='header'>TeckKnows Articles</h1>
+      <h1 className='header'>TechKnows Articles</h1>
     </div>
     <Router>
       <NavBar />
