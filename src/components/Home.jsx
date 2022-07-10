@@ -28,13 +28,13 @@ const Home = () => {
           <h3>CONTACT</h3>
           <div className="footerbtn">
             <div>
-              <i class="fab fa-linkedin"></i>
+              <i className="fab fa-linkedin"></i>
             </div>
             <div>
-              <i class="fab fa-github"></i>
+              <i className="fab fa-github"></i>
             </div>
             <div>
-              <i class="fas fa-envelope"></i>
+              <i className="fas fa-envelope"></i>
             </div>
           </div>
         </div>
