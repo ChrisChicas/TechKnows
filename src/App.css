@@ -21,6 +21,8 @@ nav ul {
   list-style-type: none;
   margin: 0;
   padding-top: 10px;
+  padding-left: 30px ;
+
 }
 nav li {
   text-align: center;

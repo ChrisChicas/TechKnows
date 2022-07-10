@@ -6,7 +6,11 @@ module.exports = {
 
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "clear-sky": "#aadbfa",
+      },
+    },
   },
   plugins: [],
-}
+};

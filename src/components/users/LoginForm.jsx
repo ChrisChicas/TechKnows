@@ -16,29 +16,51 @@ const LoginForm = () => {
     }
   }
   return (
-    <main>
-      <h1>Login</h1>
-    <form onSubmit={verification}>
-        {error ? <div className="alert alert-danger alert-dismissible" role="alert">
-          Username or Password Incorrect.
-          <button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          </div> 
-          : null}
-        <div className="row">
-            <div className="col-sm-6 form-group">
-                <label htmlFor='username'>Username</label>
-                <input type="text" value={username} id='username' className="form-control" placeholder="Enter Username" onChange={e => {setUserName(e.target.value)}} required/>
-            </div>
-            <div className="col-sm-6 form-group">
-                <label htmlFor='password'>Password</label>
-                <input type="password" value={password} id='password' className="form-control" placeholder="Enter Password" onChange={e => {setPassword(e.target.value)}} required/>
-            </div>
-        </div>
-        <input className="btn btn-primary" type="submit" value="Login" />
-    </form>
-    </main> 
+
+    <div className='container'>
+		<h3 className='my-4 mx-16 text-3xl font-bold'>Login</h3>  
+		<form className="mx-10" onSubmit={verification}>
+				<>{error ? <div className="alert alert-danger alert-dismissible" role="alert">
+									Username already exists.
+									<button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+									</div> 
+									: null}</>
+			<ul className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
+				<li className="py-2 pl-2 border border-slate-300">
+					<label className="text-blue" htmlFor="firstname">Username: </label>
+					<input
+					className="border-2 rounded-lg border-stone-300"
+					value={username}
+          onChange={e => {setUserName(e.target.value)}}
+					type="text"
+					id="firstname"
+					name="firstname"
+					required
+					/>
+				</li>
+				<li className="py-2 pl-2 border border-slate-300">
+					<label className="text-blue" htmlFor="password">Password: </label>
+					<input
+					className="border-2 rounded-lg border-stone-300"
+					value={password}
+					onChange={e => {setPassword(e.target.value)}}
+					id="password"
+					name="password"
+					required
+					/>
+									
+				</li>
+			</ul>
+			<button 
+					className="hover:bg-indigo-500 my-4 inline-flex items-center justify-center p-2 bg-indigo-400 rounded-md shadow-lg"
+					type="submit">
+					Login
+			</button>
+		</form>
+		</div>
+
   )
 }
 
