@@ -28,13 +28,13 @@ const Home = () => {
           <h3>CONTACT</h3>
           <div className="footerbtn">
             <div>
-              <i className="fab fa-linkedin"></i>
+            <a href='https://www.linkedin.com/in/olatunde-adetayo-7440b0210/'><i className="fab fa-linkedin"></i></a>
             </div>
             <div>
-              <i className="fab fa-github"></i>
+              <a href='https://github.com/QuadrupleTunde'><i className="fab fa-github"></i></a>
             </div>
             <div>
-              <i className="fas fa-envelope"></i>
+              <a href='mailto:ttayo9026@gmail.com'><i className="fas fa-envelope"></i></a>
             </div>
           </div>
         </div>
