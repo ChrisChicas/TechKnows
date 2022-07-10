@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 
 export default function MainFeed(){
     const [articles, setArticles] = useState([])
@@ -12,12 +13,14 @@ export default function MainFeed(){
         fetchData()
     }, [])
 
-    const formatArticles = articles.map(article => {
+    const formatArticles = articles.map((article, key) => {
         let contentDisplay = article.content.substring(0, 50) + "..."
         return(
-            <div>
-                <h2>{article.title}</h2>
-                <p>{contentDisplay}</p>
+            <div key={key}>
+                <Link to={"/articles/" + article.article_id}>
+                    <h2>{article.title}</h2>
+                    <p>{contentDisplay}</p>
+                </Link>
             </div>    
         ) 
     })
