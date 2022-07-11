@@ -3,7 +3,7 @@ import { CurrentUser } from "../contexts/currentUser"
 import { Link } from "react-router-dom"
 
 export default function NavBar(){
-    const {currentUser, setCurrentUser} = useContext(CurrentUser)
+    const {currentUser} = useContext(CurrentUser)
     let loggedIn = (
         <>
             <li style={{ float: 'right' }}><Link to="/signup">Sign Up</Link></li>
@@ -12,7 +12,7 @@ export default function NavBar(){
     )
     if (currentUser) {
         loggedIn = (
-            <li style={{float: "right"}}><a href="#">Sign Out</a></li>
+            <li style={{float: "right"}}><Link to="/logout">Log Out</Link></li>
         )
     }
     return(

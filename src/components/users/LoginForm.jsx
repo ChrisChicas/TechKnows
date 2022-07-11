@@ -25,7 +25,6 @@ const LoginForm = () => {
 	})
 	if (response.status === 200){
 	const data = await response.json()
-	console.log(data)
 	setCurrentUser(data.user)
 	navigate("/")	
 	} else {
@@ -53,7 +52,7 @@ const LoginForm = () => {
 					<input
 					className="border-2 rounded-lg border-stone-300"
 					value={username}
-          onChange={e => {setUserName(e.target.value)}}
+          			onChange={e => {setUserName(e.target.value)}}
 					type="text"
 					id="username"
 					placeholder="Enter Username"
@@ -66,6 +65,7 @@ const LoginForm = () => {
 					className="border-2 rounded-lg border-stone-300"
 					value={password}
 					onChange={e => {setPassword(e.target.value)}}
+					type="password"
 					id="password"
 					placeholder="Enter Password"
 					required
