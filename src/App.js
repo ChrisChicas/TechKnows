@@ -9,12 +9,13 @@ import MainFeed from './components/articles/MainFeed';
 import NavBar from './components/NavBar';
 import NotFound from './components/404';
 import SignUpForm from './components/users/SignUpForm';
+
 import './App.css';
 
 function App() {
   return (
     <div>
-      <h1 className='header'>TeckKnows Articles</h1>
+      <h1 className='header'>TechKnows Articles</h1>
       <CurrentUserProvider>
         <Router>
           <NavBar />
@@ -30,6 +31,7 @@ function App() {
           </Routes>
         </Router>  
       </CurrentUserProvider>
+     
     </div>
   );
 }
