@@ -15,9 +15,9 @@ export default function ArticleDetails(){
     }, [articleId])
 
     return(
-        <main>
-            <h1>Article Details For Article "{article.title}"</h1>
-            <p>{article.content}</p>  
+        <main className="article">
+            <h1 className="articlehead">Article Details For Article "{article.title}"</h1>
+            <p className="para">{article.content}</p>  
         </main>       
     )
 }

@@ -16,18 +16,20 @@ export default function MainFeed(){
     const formatArticles = articles.map((article, key) => {
         let contentDisplay = article.content.substring(0, 50) + "..."
         return(
-            <div key={key}>
+            <main className="main">
+            <div key={key} className="text-slate-500 hover:text-blue-600">
                 <Link to={"/articles/" + article.article_id}>
                     <h2>{article.title}</h2>
                     <p>{contentDisplay}</p>
                 </Link>
-            </div>    
+            </div> 
+            </main>   
         ) 
     })
 
     return(
-        <main>
-            <h1>Main Feed</h1>
+        <main className="my-4 inline-flex items-center justify-center p-2 bg-green-300 rounded-md shadow-lg">
+            <h1 className="my-4 inline-flex items-center justify-center p-2 bg-green-300 rounded-md shadow-lg">Main Feed</h1>
             {formatArticles}    
         </main>
     )
