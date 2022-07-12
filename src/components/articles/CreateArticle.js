@@ -1,41 +1,65 @@
-import { useState } from "react"
+import { CurrentUser } from "../../contexts/currentUser"
+import { useState, useContext } from "react"
+import { useNavigate } from "react-router-dom"
 
 export default function CreateArticle(){
+    const navigate = useNavigate()
+    const {currentUser} = useContext(CurrentUser)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
     const [error, setError] = useState(false)
 
     const postArticle = async e => {
         e.preventDefault()
-        try {
-          // fetch request to post article content
-          //redirect page to main feed or to article details
-        } catch (error) {
-          //if article title or content empty, setError true, reset username/password values
+        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/articles`, {
+            method: "POST",
+            credentials: "include",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                title: title,
+                content: content
+            })
+        })
+        if (response.status === 200){
+            const data = await response.json()
+            navigate(`/articles/${data.article_id}`)
+        } else {
+            setError(true)
         }
       }
 
-    return(
-        <main>
-            <h1>Create Article</h1>
-            {error ? <div className="alert alert-danger alert-dismissible" role="alert">
-                Article Title or Content Cannot be Empty.
-                <button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div> 
+    if (currentUser){
+        return(
+            <main>
+                <h1>Create Article</h1>
+                {error ? <div className="alert alert-danger alert-dismissible" role="alert">
+                    Article Title or Content Cannot be Empty.
+                    <button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div> 
                 : null}
-            <form onSubmit={postArticle}>
-                    <div className="col-sm-2 form-group">
-                        <label htmlFor='title'>Article Title</label>
-                        <input type="text" value={title} id='title' className="form-control" placeholder="Enter Title" onChange={e => {setTitle(e.target.value)}} required/>
-                    </div>
-                    <div className="col-sm-8 form-group">
-                        <label htmlFor='content'>Article Content</label>
-                        <textarea value={content} id='content' className="form-control" rows="12" placeholder="..." onChange={e => {setContent(e.target.value)}} required/>
-                    </div>
-                <input className="btn btn-primary" type="submit" value="Login" />
-            </form>
-        </main>
-    )
+                <form onSubmit={postArticle}>
+                        <div className="col-sm-2 form-group">
+                            <label htmlFor='title'>Article Title</label>
+                            <input type="text" value={title} id='title' className="form-control" placeholder="Enter Title" onChange={e => {setTitle(e.target.value)}} required/>
+                        </div>
+                        <div className="col-sm-8 form-group">
+                            <label htmlFor='content'>Article Content</label>
+                            <textarea value={content} id='content' className="form-control" rows="12" placeholder="Enter Article Content..." onChange={e => {setContent(e.target.value)}} required/>
+                        </div>
+                    <input className="btn btn-primary" type="submit" value="Submit" />
+                </form>
+            </main>
+        )    
+    } else {
+        return(
+            <main>
+                <h1>You must be logged in to create an article.</h1>
+            </main>
+        )
+    }
+    
 }

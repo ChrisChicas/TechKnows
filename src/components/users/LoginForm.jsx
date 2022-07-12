@@ -25,7 +25,7 @@ const LoginForm = () => {
 	})
 	if (response.status === 200){
 	const data = await response.json()
-	setCurrentUser(data.user)
+	setCurrentUser(data)
 	navigate("/")	
 	} else {
 		setError(true)
@@ -39,13 +39,15 @@ const LoginForm = () => {
     <div className='container'>
 		<h3 className='my-4 mx-16 text-3xl font-bold'>Login</h3>  
 		<form className="mx-10" onSubmit={verification}>
-				<>{error ? <div className="alert alert-danger alert-dismissible" role="alert">
-									Username or password incorrect.
-									<button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
-										<span aria-hidden="true">&times;</span>
-									</button>
-									</div> 
-									: null}</>
+				<>
+					{error ? <div className="alert alert-danger alert-dismissible" role="alert">
+						Username or password incorrect.
+						<button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div> 
+					: null}
+				</>
 			<ul className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
 				<li className="py-2 pl-2 border border-slate-300">
 					<label className="mr-2 text-blue" htmlFor="username">Username: </label>
