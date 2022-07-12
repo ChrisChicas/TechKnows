@@ -40,12 +40,12 @@ export default function MainFeed(){
     if (currentUser){
         loggedIn = (
             <div>
-                <h4>Want to write your own article? <Link to="/articles/new">Create a new article here!</Link></h4>
+                <h4 style={{"font-family": "cursive"}}>Want to write your own article? <Link to="/articles/new">Create a new article here!</Link></h4>
             </div>
         )
     } else {
         loggedIn = (
-            <div>
+            <div >
                 <h4>Log in or sign up to create your own article!</h4>
             </div>
         )
@@ -53,7 +53,7 @@ export default function MainFeed(){
 
     return(
         <main className="my-4 inline-flex items-center justify-center p-2 bg-green-300 rounded-md shadow-lg">
-            <h1 className="my-4 inline-flex items-center justify-center p-2 bg-green-300 rounded-md shadow-lg">Main Feed {loggedIn}</h1>
+            <h1 style={{"fontFamily": "cambria"}}>Main Feed {loggedIn}</h1>
             {formatArticles}
                 
         </main>

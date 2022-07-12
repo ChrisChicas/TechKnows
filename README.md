@@ -3,7 +3,7 @@ TechKnows is a free tech article website where users can log in to create articl
 
 
 ## Development Process
-- After many suggestion and  delibration. We came up with a vague concept of a Techknows article. The main purpose of our design is to enable users to read articles, publish articles and delete his own published article and hence if the user is interested in publishing an article, the user need to sign up in order to publish his own article. As for the relationships, we wanted to keep it simple, in the sense that one user can post many article and one article belong to a user.
+- After many suggestions and  delibrations. We came up with a vague concept of a Techknows article. The main purpose of our design is to enable users to read articles, publish articles and delete his own published article and hence if the user is interested in publishing an article, the user need to sign up in order to publish his own article. As for the relationships, we wanted to keep it simple, in the sense that one user can post many article and one article belong to a user.
 
 
 ## Application Logic

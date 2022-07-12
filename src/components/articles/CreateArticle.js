@@ -32,8 +32,8 @@ export default function CreateArticle(){
 
     if (currentUser){
         return(
-            <main>
-                <h1>Create Article</h1>
+            <main className="article-cret">
+                <h1 className="article-hd">Create Article</h1>
                 {error ? <div className="alert alert-danger alert-dismissible" role="alert">
                     Article Title or Content Cannot be Empty.
                     <button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
@@ -50,7 +50,7 @@ export default function CreateArticle(){
                             <label htmlFor='content'>Article Content</label>
                             <textarea value={content} id='content' className="form-control" rows="12" placeholder="Enter Article Content..." onChange={e => {setContent(e.target.value)}} required/>
                         </div>
-                    <input className="btn btn-primary" type="submit" value="Submit" />
+                    <input className="btn btn-primary article-hd" type="submit" value="Submit" />
                 </form>
             </main>
         )    
