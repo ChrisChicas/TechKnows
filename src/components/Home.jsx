@@ -23,7 +23,7 @@ const Home = () => {
               That’s right, you or your child could learn to program and apply this knowledge to topics 
               completely separate from technology – like nature studies, geography research, and film and design.
           </p>
-      </div ><br/><br/>
+      </div >
       <div className="footer">
           <h3>CONTACT</h3>
           <div className="footerbtn">

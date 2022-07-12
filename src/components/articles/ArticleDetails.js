@@ -82,7 +82,6 @@ export default function ArticleDetails(){
                 : null}
                 <form onSubmit={createComment}>
                     <div className="col-sm-8 form-group">
-                        <label htmlFor="comment">Comment:</label>
                         <textarea id="comment" value={comment} placeholder="Enter comment..." onChange={e => {setComment(e.target.value)}}/>    
                     </div>
                     <input className="btn btn-primary" type="submit" value="Submit" />
@@ -129,14 +128,16 @@ export default function ArticleDetails(){
     }
 
     return(
-        <main className="article">
+        <main className="article-com">
             <h1 className="articlehead">{article.title}</h1>
-            <h4>Written by: {article.artAuthor.first_name} {article.artAuthor.last_name}</h4>
+            <h4 className="articlewr">Written by: {article.artAuthor.first_name} {article.artAuthor.last_name}</h4>
             <p className="para">{article.content}</p>
             {authorAccess}
+            <div className="comment">
             <h4>Comments:</h4>
             {comments}
             {commentForm}
+            </div>
         </main> 
     )
 }
