@@ -10,6 +10,7 @@ export default function CurrentUserProvider({children}){
             const response = await fetch(`${process.env.REACT_APP_API}/authentication/profile`, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
                 }
             })
             if (response.status === 200){
