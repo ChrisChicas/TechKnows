@@ -7,7 +7,7 @@ export default function NavBar(props){
     const navigate = useNavigate()
 
     const logOut = async () => {
-        await fetch(`${process.env.SERVER_URL}/authentication/logout`, {
+        await fetch(`${process.env.REACT_APP_API}/authentication/logout`, {
             method: "POST",
             credentials: "include",
             headers: {

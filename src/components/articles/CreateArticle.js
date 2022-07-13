@@ -11,7 +11,7 @@ export default function CreateArticle(){
 
     const postArticle = async e => {
         e.preventDefault()
-        const response = await fetch(`${process.env.SERVER_URL}/articles`, {
+        const response = await fetch(`${process.env.REACT_APP_API}/articles`, {
             method: "POST",
             credentials: "include",
             headers: {

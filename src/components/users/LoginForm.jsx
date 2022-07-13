@@ -12,7 +12,7 @@ const LoginForm = () => {
 
   const verification = async e => {
     e.preventDefault()
-	const response = await fetch(`${process.env.SERVER_URL}/authentication`, {
+	const response = await fetch(`${process.env.REACT_APP_API}/authentication`, {
 		method: "POST",
 		credentials: "include",
 		headers: {
