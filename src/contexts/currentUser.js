@@ -7,7 +7,7 @@ export default function CurrentUserProvider({children}){
 
     useEffect(() => {
         const userCheck = async () => {
-            const response = await fetch(`${process.env.SERVER_URL}/authentication/profile`, {
+            const response = await fetch(`${process.env.REACT_APP_API}/authentication/profile`, {
                 credentials: "include"
             })
             try {

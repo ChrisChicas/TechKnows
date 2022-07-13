@@ -8,7 +8,7 @@ export default function MainFeed(){
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.SERVER_URL}/articles`, {
+            const response = await fetch(`${process.env.REACT_APP_API}/articles`, {
                 credentials: "include"
             })
             const data = await response.json()
