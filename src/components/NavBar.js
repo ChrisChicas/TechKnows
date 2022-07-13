@@ -30,8 +30,8 @@ export default function NavBar(props){
         loggedIn = (
             <>
                 <li><Link to="/articles/new">Create Article</Link></li>
-                <li style={{float: "right"}}><button onClick={logOut}>Log Out</button></li>
-                <p style={{float: "right"}}>Logged in as {currentUser.username}</p>
+                <li className="log" onClick={logOut}>LOG OUT</li>
+                <p className="logname">Logged in as {currentUser.username}</p>
             </>
             
         )

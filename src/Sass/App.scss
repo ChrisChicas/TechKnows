@@ -15,7 +15,7 @@ nav {
     ul {
         list-style-type: none;
         margin: 0;
-        padding-top: 10px;
+        padding-top: 17px;
     }
     li {
         text-align: center;
@@ -23,28 +23,29 @@ nav {
         font-size: 2em;
         padding-left: 2px;
         padding-bottom: 3px;
-        border-radius: 5px;
         transition: all .4s ease-in-out;
-        box-shadow: 2px 2px 15px rgba(0, 0, 0, .5);
         padding-top: 4px;
         position: relative;
         bottom: 3px;
         a:hover{
             cursor: default;
             transform: translateY(-5px);
-            border: 1px solid blue;
-            box-shadow: 1px 1px 1px 7px white;
-            background-color: cyan;
+            color: azure;
+            box-shadow: 1px 1px 1px 5px white;
+            background-color: rgb(47, 99, 122) ;
         }
+       
         display: inline;
         margin-right: 1em;
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         a {
-            color: white;
+            color: rgb(47, 99, 122);
             text-decoration: none;
-            border: 2px solid white;
             height: 6vh;
             width: 10vw;
+            font-size: 1.0em;
+            text-transform: uppercase;
+            
         }
     }
 }
@@ -115,6 +116,33 @@ nav {
     background-color: aliceblue;
   }
 
+  .log{
+    float: right;
+    color: rgb(47, 99, 122) ;
+    transition: all .4s ease-in-out;
+    padding-top: 8px;
+    cursor: default;
+    transform: translateY(-5px);
+   
+}
+
+.log:hover{
+    cursor: default;
+    transform: translateY(-5px);
+    color: azure;
+    box-shadow: 1px 1px 1px 2px white;
+    background-color: rgb(47, 99, 122);
+    text-decoration: underline;
+    }
+.logname{
+        float: right;
+        padding-right: 40px;
+        padding-top: 15px;
+        color: darkblue;
+        font-size: 1em;
+        font-weight: 500;
+    }
+  
 .article-cret{
     padding-top: 70px;
     padding-left: 300px;
@@ -160,6 +188,9 @@ nav {
     .comment{
         padding-top: 40px;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         font-family: cursive;
         justify-items: center;
         color: rgb(241, 173, 83);
@@ -169,6 +200,12 @@ nav {
 #comment{
         width: 30vw;
         position: relative;
-        right: 18px;
+        left: 50px;
 
     }
+
+.btn{
+    padding-left: 60px;
+    margin-left: 200px;
+    padding-right: 60px;
+}
