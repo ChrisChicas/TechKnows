@@ -12,7 +12,7 @@ export default function ArticleDetails(){
     
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/articles/${articleId}`, {
+            const response = await fetch(`${process.env.SERVER_URL}/articles/${articleId}`, {
                 credentials: "include"
             })
             if (response.status === 200){
@@ -27,7 +27,7 @@ export default function ArticleDetails(){
     }, [articleId, navigate])
 
     const deleteArticle = async () => {
-        await fetch(`${process.env.REACT_APP_SERVER_URL}/articles/${articleId}`, {
+        await fetch(`${process.env.SERVER_URL}/articles/${articleId}`, {
             method: "DELETE",
             credentials: "include",
         })
@@ -39,7 +39,7 @@ export default function ArticleDetails(){
         if (!comment){
             setError(true)
         } else {
-            await fetch(`${process.env.REACT_APP_SERVER_URL}/articles/${articleId}/comments`, {
+            await fetch(`${process.env.SERVER_URL}/articles/${articleId}/comments`, {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -54,7 +54,7 @@ export default function ArticleDetails(){
     }
 
     const deleteComment = async commentId => {
-        await fetch(`${process.env.REACT_APP_SERVER_URL}/articles/${articleId}/comments/${commentId}`, {
+        await fetch(`${process.env.SERVER_URL}/articles/${articleId}/comments/${commentId}`, {
             method: "DELETE",
             credentials: "include",
         })
