@@ -16,7 +16,7 @@ const SignUpForm = () => {
   
 	const verification = async e => {
 	  e.preventDefault()
-	  const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/users`, {
+	  const response = await fetch(`${process.env.REACT_APP_API}/users`, {
 		method: "POST",
 		credentials: "include",
 		headers: {

@@ -8,7 +8,7 @@ export default function MainFeed(){
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/articles`, {
+            const response = await fetch(`${process.env.REACT_APP_API}/articles`, {
                 credentials: "include"
             })
             const data = await response.json()
@@ -40,7 +40,7 @@ export default function MainFeed(){
     if (currentUser){
         loggedIn = (
             <div>
-                <h4 style={{"font-family": "cursive"}}>Want to write your own article? <Link to="/articles/new">Create a new article here!</Link></h4>
+                <h4 style={{"fonFamily": "cursive"}}>Want to write your own article? <Link to="/articles/new">Create a new article here!</Link></h4>
             </div>
         )
     } else {
