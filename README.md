@@ -44,7 +44,7 @@ The 'Article navigation' button is a react-router-dom component that takes the u
 
 
 ### Outstanding bugs & Unfinished functionality
-- Cors error
+- TBD
 
 
 ## Project Planning
