@@ -12,9 +12,7 @@ export default function ArticleDetails(){
     
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.REACT_APP_API}/articles/${articleId}`, {
-                credentials: "include"
-            })
+            const response = await fetch(`${process.env.REACT_APP_API}/articles/${articleId}`)
             if (response.status === 200){
             const data = await response.json()
             setArticle(data)   
@@ -29,7 +27,10 @@ export default function ArticleDetails(){
     const deleteArticle = async () => {
         await fetch(`${process.env.REACT_APP_API}/articles/${articleId}`, {
             method: "DELETE",
-            credentials: "include",
+            headers: {
+				"Authorization": `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json'
+			}
         })
         navigate("/articles")
     }
@@ -41,9 +42,9 @@ export default function ArticleDetails(){
         } else {
             await fetch(`${process.env.REACT_APP_API}/articles/${articleId}/comments`, {
                 method: "POST",
-                credentials: "include",
                 headers: {
-                    "Content-Type": "application/json"
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
                     comment: comment
@@ -56,7 +57,10 @@ export default function ArticleDetails(){
     const deleteComment = async commentId => {
         await fetch(`${process.env.REACT_APP_API}/articles/${articleId}/comments/${commentId}`, {
             method: "DELETE",
-            credentials: "include",
+            headers: {
+				"Authorization": `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json'
+			}
         })
         window.location.reload()
     }

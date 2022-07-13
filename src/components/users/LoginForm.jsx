@@ -14,9 +14,9 @@ const LoginForm = () => {
     e.preventDefault()
 	const response = await fetch(`${process.env.REACT_APP_API}/authentication`, {
 		method: "POST",
-		credentials: "include",
 		headers: {
-			"Content-Type": "application/json"
+			"Authorization": `Bearer ${localStorage.getItem("token")}`,
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
 			username: username,
@@ -24,9 +24,10 @@ const LoginForm = () => {
 		})
 	})
 	if (response.status === 200){
-	const data = await response.json()
-	setCurrentUser(data)
-	navigate("/")	
+		const data = await response.json()
+		setCurrentUser(data.user)
+		localStorage.setItem("token", data.token)
+		navigate("/")	
 	} else {
 		setError(true)
 		setUserName("")

@@ -9,12 +9,13 @@ export default function NavBar(props){
     const logOut = async () => {
         await fetch(`${process.env.REACT_APP_API}/authentication/logout`, {
             method: "POST",
-            credentials: "include",
             headers: {
-                "Content-Type": "application/json"
-            }
+				"Authorization": `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json'
+			}
         })
         setCurrentUser(null)
+        localStorage.removeItem("token")
         props.setLoggedOut(true)
         navigate("/")   
     }
