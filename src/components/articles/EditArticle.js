@@ -13,7 +13,7 @@ export default function EditArticle(){
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/articles/${articleId}`, {
+            const response = await fetch(`${process.env.SERVER_URL}/articles/${articleId}`, {
                 credentials: "include"
             })
             if (response.status === 200){
@@ -30,7 +30,7 @@ export default function EditArticle(){
 
     const updateArticle = async e => {
         e.preventDefault()
-        const response = await fetch(`${process.env.REACT_APP_SERVER_URL}/articles/${articleId}`, {
+        const response = await fetch(`${process.env.SERVER_URL}/articles/${articleId}`, {
             method: "PUT",
             credentials: "include",
             headers: {
