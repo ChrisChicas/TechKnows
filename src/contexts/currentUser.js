@@ -8,15 +8,13 @@ export default function CurrentUserProvider({children}){
     useEffect(() => {
         const userCheck = async () => {
             const response = await fetch(`${process.env.REACT_APP_API}/authentication/profile`, {
-                credentials: "include"
+                headers: {
+                    "Authorization": `Bearer ${localStorage.getItem("token")}`,
+                    'Content-Type': 'application/json'
+                }
             })
-            try {
-                const data = await response.json()
-                setCurrentUser(data)
-            } catch (error) {
-                setCurrentUser(null)
-            }
-            
+            let user = await response.json()
+            setCurrentUser(user)
         }
         userCheck()
     }, [])

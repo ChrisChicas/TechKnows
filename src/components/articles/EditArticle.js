@@ -13,9 +13,7 @@ export default function EditArticle(){
 
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(`${process.env.REACT_APP_API}/articles/${articleId}`, {
-                credentials: "include"
-            })
+            const response = await fetch(`${process.env.REACT_APP_API}/articles/${articleId}`)
             if (response.status === 200){
                 const data = await response.json()
                 setArticle(data)
@@ -32,10 +30,10 @@ export default function EditArticle(){
         e.preventDefault()
         const response = await fetch(`${process.env.REACT_APP_API}/articles/${articleId}`, {
             method: "PUT",
-            credentials: "include",
             headers: {
-                "Content-Type": "application/json"
-            },
+				"Authorization": `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json'
+			},
             body: JSON.stringify({
                 title: title,
                 content: content

@@ -13,10 +13,10 @@ export default function CreateArticle(){
         e.preventDefault()
         const response = await fetch(`${process.env.REACT_APP_API}/articles`, {
             method: "POST",
-            credentials: "include",
             headers: {
-                "Content-Type": "application/json"
-            },
+				"Authorization": `Bearer ${localStorage.getItem("token")}`,
+                'Content-Type': 'application/json'
+			},
             body: JSON.stringify({
                 title: title,
                 content: content
