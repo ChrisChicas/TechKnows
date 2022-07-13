@@ -17,7 +17,7 @@ nav {
 nav ul {
   list-style-type: none;
   margin: 0;
-  padding-top: 10px;
+  padding-top: 17px;
 }
 nav li {
   text-align: center;
@@ -191,5 +191,11 @@ nav li a {
 #comment {
   width: 30vw;
   position: relative;
-  right: 18px;
+  left: 50px;
+}
+
+.btn {
+  padding-left: 60px;
+  margin-left: 200px;
+  padding-right: 60px;
 }/*# sourceMappingURL=App.css.map */
