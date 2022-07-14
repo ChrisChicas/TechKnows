@@ -18,9 +18,9 @@ const SignUpForm = () => {
 	  e.preventDefault()
 	  const response = await fetch(`${process.env.REACT_APP_API}/users`, {
 		method: "POST",
-		credentials: "include",
 		headers: {
-			"Content-Type": "application/json"
+			"Authorization": `Bearer ${localStorage.getItem("token")}`,
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify({
 			username: username,
@@ -31,7 +31,8 @@ const SignUpForm = () => {
 	})
 	if (response.status === 200){
 		const data = await response.json()
-		setCurrentUser(data)
+		setCurrentUser(data.user)
+		localStorage.setItem("token", data.token)
 		navigate("/")
 	} else {
 		setError(true)
