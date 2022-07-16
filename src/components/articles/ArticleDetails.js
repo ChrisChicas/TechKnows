@@ -126,7 +126,7 @@ export default function ArticleDetails(){
     let authorAccess
     if (currentUser?.user_id === article.user_id || currentUser?.role === "admin"){
         authorAccess = (
-            <div>
+            <div className="row justify-content-center mx-auto">
                 <button type="button" className="btn btn-primary"><Link to={`/articles/${articleId}/edit`}>Edit Article</Link></button>
                 <button type="button" className="btn btn-danger" onClick={deleteArticle}>Delete Article</button>    
             </div>
