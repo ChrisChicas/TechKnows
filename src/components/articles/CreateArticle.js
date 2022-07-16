@@ -32,8 +32,8 @@ export default function CreateArticle(){
 
     if (currentUser){
         return(
-            <main className="article-cret">
-                <h1 className="article-hd">Create Article</h1>
+            <div className="articleforms">
+                <h2><u>Create Article</u></h2>
                 {error ? <div className="alert alert-danger alert-dismissible" role="alert">
                     Article Title or Content Cannot be Empty.
                     <button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
@@ -42,23 +42,24 @@ export default function CreateArticle(){
                     </div> 
                 : null}
                 <form onSubmit={postArticle}>
-                        <div className="col-sm-2 form-group">
-                            <label htmlFor='title'>Article Title</label>
-                            <input type="text" value={title} id='title' className="form-control" placeholder="Enter Title" onChange={e => {setTitle(e.target.value)}} required/>
-                        </div>
-                        <div className="col-sm-8 form-group">
-                            <label htmlFor='content'>Article Content</label>
-                            <textarea value={content} id='content' className="form-control" rows="12" placeholder="Enter Article Content..." onChange={e => {setContent(e.target.value)}} required/>
-                        </div>
-                    <input className="btn btn-primary article-hd" type="submit" value="Submit" />
+                    <div className="form-group">
+                        <label htmlFor='title'>Article Title</label>
+                        <input type="text" value={title} id='title' className="form-control" placeholder="Enter Article Title" onChange={e => {setTitle(e.target.value)}} required/>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor='content'>Article Content</label>
+                        <textarea value={content} id='content' className="form-control" rows="12" placeholder="Enter Article Content..." onChange={e => {setContent(e.target.value)}} required/>
+                    </div>
+                    <a href="/articles" className="btn btn-primary">Go Back</a>
+                    <button className="btn btn-success" type="submit" value="Submit">Submit</button>                
                 </form>
-            </main>
+            </div>
         )    
     } else {
         return(
-            <main>
-                <h1>You must be logged in to create an article.</h1>
-            </main>
+            <div className="articleforms container-fluid">
+                <h2><u>You must be logged in to create an article.</u></h2>
+            </div>
         )
     }
     

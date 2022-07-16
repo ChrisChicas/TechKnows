@@ -1,211 +1,266 @@
-.header{
+.alert{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 70px;
-    background-color: rgb(47, 99, 122) ;
-    height: 25vh;
-    width: 100vw;
-    color: white;
-    padding-top: 40px;
-    padding-left: 25px;
-}
-nav {
-    background-color:rgb(192, 201, 204) ;
-    box-shadow: 2px 2px 2px 2px blue;
-    height: 10vh;
-    ul {
-        list-style-type: none;
-        margin: 0;
-        padding-top: 17px;
-    }
-    li {
-        text-align: center;
-        color: blue;
-        font-size: 2em;
-        padding-left: 2px;
-        padding-bottom: 3px;
-        transition: all .4s ease-in-out;
-        padding-top: 4px;
-        position: relative;
-        bottom: 3px;
-        a:hover{
-            cursor: default;
-            transform: translateY(-5px);
-            color: azure;
-            box-shadow: 1px 1px 1px 5px white;
-            background-color: rgb(47, 99, 122) ;
-        }
-       
-        display: inline;
-        margin-right: 1em;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        a {
-            color: rgb(47, 99, 122);
-            text-decoration: none;
-            height: 6vh;
-            width: 10vw;
-            font-size: 1.0em;
-            text-transform: uppercase;
-            
-        }
-    }
 }
 
-.homejs{
-    height: 145vh;
-    width: 100vw;
-    padding-top: 50px;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    background-color: aliceblue;
-    h2{
+.articlecontainer{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000009;
 
-        text-transform: uppercase;
-        text-align: center;
-        font-size: 2rem;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        color: blue;
-        text-decoration-line:underline;
-        
-    }
-    img{
-        padding-top: 50px;
-        height:90vh;
-         width:70vw;  
-    }
-    .parajs{
-        font-family: 'cursive';
-        height: 4vh;
-        width: 70vw;
-        padding-top: 40px;
-        
+    a{
+        text-align: left;
     }
     
+    .articleauth{
+        text-align: center;
+        margin-bottom: 1em;
+    }
+    
+    .articlecontent{
+        font-size: 1em;
+        margin: 1em;
+        white-space: pre-wrap;
+        text-align: left;
+    }
+
+    .articletitle{
+        text-align: center;
+        text-transform: capitalize;
+        text-decoration-line: underline;
+        margin-top: 1em;   
+    }
+
+    .comments{
+        text-align: left;
+        margin: 1em;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+
+        .btn {
+            margin-top: 0;
+            margin-right: 0;
+            margin-left: 0;
+        }
+
+        .form-control{
+            width: auto;
+        }
+    }
+}
+
+.articleforms{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000009;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+
+    .btn{
+        margin-top: 0;
+        margin-right: 1em;
+        margin-left: 0;
+    }
+
+    .form-control{
+        width: auto;
+    }
+}
+
+.authforms{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000009;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 1em;
+
+    .btn{
+        margin: 0;
+    }
+
+    .form-control{
+        width: auto;
+    }
+}
+
+.btn{
+    margin: 1em;
+
+    a{
+        color: #FFFFFF;
+    }
+}
+
+.container-fluid{
+    padding: 0;
+}
+
+.dropdown-divider{
+    border-top: 1px solid #000009
+}
+
+.dropdown-item:hover{
+    background-color: #878E89;
+}
+
+.dropdown-menu{
+    border: 2px solid #000009;
+    border-radius: 6px;
+    background-color: #969E98;
 }
 
 .footer{
-    width: 100vw;
-    height: 25vh;
     display: flex;
     justify-items: center;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(47, 99, 122);
-    padding-top: 50px;
-    i{
-        font-size: 1.2rem;
+    background-color: #2f637a;
+    padding-top: 2em;
+    padding-left: 0;
+
+    a{
+        font-size: 1.2em;
         color: white;
-        pointer-events: none;
-      
+        margin-bottom: 1em;
     }
+
     h3{
         font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: 1.5em;
         color: white;
-      } 
+    } 
+}
+
+.form-control-lg{
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.header{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2.7em;
+    background-color: #2f637a;
+    color: #FFFFFF;
+    padding-top: 1em;
+    padding-left: 25px;
+    margin-bottom: 0;
+}
+
+.home{
+    padding-top: 3em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000009;
+
+    h2{
+        text-transform: capitalize;
+        text-align: center;
+        text-decoration-line: underline; 
+    }
+ 
+    &par{
+        margin-top: 0.5em;
+        margin-bottom: 0;
+        margin-right: 1em;
+        margin-left: 0.3em;
+        font-size: 1em;
+    } 
 }
 
 .main{
-    padding-top: 18px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
-    background-size: cover;
-    background-color: aliceblue;
-    
-  }
-  .container{
-    background-color: aliceblue;
-  }
+    margin-top: 1em;
+    color: #000009;
 
-  .log{
-    float: right;
-    color: rgb(47, 99, 122) ;
-    transition: all .4s ease-in-out;
-    padding-top: 8px;
-    cursor: default;
-    transform: translateY(-5px);
-   
+    &art{
+        background-color: #969E98;
+        border: 2px solid #000009;
+        color: #000009;
+        border-radius: 6px;
+        margin-bottom: 6px;
+
+        &:hover{
+            color: #000009;
+            text-decoration: none;
+            background-color: #878E89;
+        }
+    }
 }
 
-.log:hover{
-    cursor: default;
-    transform: translateY(-5px);
-    color: azure;
-    box-shadow: 1px 1px 1px 2px white;
-    background-color: rgb(47, 99, 122);
-    text-decoration: underline;
-    }
-.logname{
-        float: right;
-        padding-right: 40px;
-        padding-top: 15px;
-        color: darkblue;
-        font-size: 1em;
-        font-weight: 500;
-    }
-  
-.article-cret{
-    padding-top: 70px;
-    padding-left: 300px;
-    height: 100vh;
-    font-weight: 700;
-    background-color: aliceblue;
-    background-size: cover;
-    color: blue;
-    .article-hd{
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-weight: 400;
-    }
-    
-}
+.navbar{
+    background-color:#A9B2AC;
+    padding-left: 0;
 
-
-.article-com{
-    padding-top: 45px;
-    padding-left: 130px;
-    padding-right: 70px;
-    height: 130vh;
-    font-weight: 700;
-    background-color: aliceblue;
-    background-size: cover;
-    color: blue;
-    .articlehead{
-        text-transform: uppercase;
-        color: darkblue;
-        text-decoration-line: underline;
-        padding-top: 25px;
-        
-    }
-    .articlewr{
-        font-size: 1.5rem;
-        font-family: cursive;
-        color:rgb(179, 168, 168) ;
-        padding-bottom: 30px;
-    }
-    .para{
-        font-size: 1.0em;
-        color: darkblue;
-    }
-    .comment{
-        padding-top: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-family: cursive;
-        justify-items: center;
-        color: rgb(241, 173, 83);
-    }
-
-}  
-#comment{
-        width: 30vw;
+    li{
+        font-size: 2em;
         position: relative;
-        left: 50px;
+        padding: 5px;
+        display: inline;
+        margin-left: 25px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        color: #000009;
 
+        a{
+            color: #000009;
+            text-decoration: none;
+
+            &:active{
+                color: #000009;
+                background-color: transparent;
+            }
+        }
+
+        &:hover{
+            color: #000009;
+            border: 2px solid #000009;
+            border-radius: 6px;
+            padding: 3px;
+            cursor: pointer;
+        }
     }
+    
+    ul{
+        list-style-type: none;
+    }
+}
 
-.btn{
-    padding-left: 60px;
-    margin-left: 200px;
-    padding-right: 60px;
+.navbar-light{
+    .navbar-brand{
+        text-align: center;
+        padding: 5px;
+        font-size: 2em;
+        position: relative;
+        display: inline;
+        margin-left: 25px;
+        margin-right: 0;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        color: #000009;
+
+        &:hover{
+            border: 2px solid #000009;
+            border-radius: 6px;
+            padding: 3px;
+        }   
+
+        &:visited{
+            color: #000009;
+        }
+    }
+}
+
+.username{
+    text-align: center;
+    background-color: #969E98;
+    padding: 3px;
+    font-size: 2em;
+    margin-left: 25px;
+    margin-bottom: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000009;
+    border: 2px solid #000009;
+    border-radius: 6px;
 }

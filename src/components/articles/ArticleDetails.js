@@ -85,10 +85,10 @@ export default function ArticleDetails(){
                     </div> 
                 : null}
                 <form onSubmit={createComment}>
-                    <div className="col-sm-8 form-group">
-                        <textarea id="comment" value={comment} placeholder="Enter comment..." onChange={e => {setComment(e.target.value)}}/>    
+                    <div className="form-group">
+                        <textarea className="form-control" value={comment} placeholder="Enter comment..." onChange={e => {setComment(e.target.value)}}/>    
                     </div>
-                    <input className="btn btn-primary" type="submit" value="Submit" />
+                    <input className="btn btn-success" type="submit" value="Submit" />
                 </form>
             </div>
             : <h4>Log in or sign up to leave a comment!</h4>}
@@ -107,13 +107,15 @@ export default function ArticleDetails(){
         let commentAuthor
         if (comment.user_id === currentUser?.user_id || currentUser?.role === "admin"){
             commentAuthor = (
-                <button onClick={() => deleteComment(comment.comment_id)}>Delete Comment</button>
+                <button type="button" className="btn btn-danger btn-sm" onClick={() => deleteComment(comment.comment_id)}>Delete Comment</button>
             )
         }
             return (
                 <div key={key}>
-                    <h4>{comment.comAuthor.first_name} {comment.comAuthor.last_name}:</h4>
-                    <h5>{comment.comment}</h5>
+                    <h5>{comment.comAuthor.first_name} {comment.comAuthor.last_name}:</h5>
+                    <blockquote className='blockquote'>
+                        <p>{comment.comment}</p>    
+                    </blockquote>
                     {commentAuthor}
                 </div>    
             )
@@ -125,23 +127,26 @@ export default function ArticleDetails(){
     if (currentUser?.user_id === article.user_id || currentUser?.role === "admin"){
         authorAccess = (
             <div>
-                <button><Link to={`/articles/${articleId}/edit`}>Edit Article</Link></button>
-                <button onClick={deleteArticle}>Delete Article</button>    
+                <button type="button" className="btn btn-primary"><Link to={`/articles/${articleId}/edit`}>Edit Article</Link></button>
+                <button type="button" className="btn btn-danger" onClick={deleteArticle}>Delete Article</button>    
             </div>
         )
     }
 
     return(
-        <main className="article-com">
-            <h1 className="articlehead">{article.title}</h1>
-            <h4 className="articlewr">Written by: {article.artAuthor.first_name} {article.artAuthor.last_name}</h4>
-            <p className="para">{article.content}</p>
+        <div className="articlecontainer container-fluid">
+            <a href="/articles"><i className="fas fa-arrow-left"></i> Go Back</a>
+            <h2 className="articletitle">{article.title}</h2>
+            <h4 className="articleauth">Written by: {article.artAuthor.first_name} {article.artAuthor.last_name}</h4>
+            <blockquote className='blockquote'>
+                <p className="articlecontent">{article.content}</p>
+            </blockquote>
             {authorAccess}
-            <div className="comment">
-            <h4>Comments:</h4>
-            {comments}
-            {commentForm}
+            <div className="comments">
+                <h4><u>Comments:</u></h4>
+                {comments}
+                {commentForm}
             </div>
-        </main> 
+        </div> 
     )
 }
