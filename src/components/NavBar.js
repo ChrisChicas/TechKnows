@@ -53,11 +53,19 @@ export default function NavBar(props){
                     <li className="nav-item dropdown">
                         <a href="/" className="nav-item dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Articles</a>
                         <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <Link to="/articles" className="dropdown-item">Most Recent</Link>
+                            <a href="/articles/?sort=Most Recent&page=1" className="dropdown-item">Most Recent</a>
                             <div className="dropdown-divider"></div> 
-                            <Link to="/articles" className="dropdown-item">JavaScript</Link>
+                            <a href="/articles/?sort=General&page=1" className="dropdown-item">General</a>
                             <div className="dropdown-divider"></div> 
-                            <Link to="/articles" className="dropdown-item">Python</Link>
+                            <a href="/articles/?sort=HTML&page=1" className="dropdown-item">HTML</a>
+                            <div className="dropdown-divider"></div> 
+                            <a href="/articles/?sort=CSS&page=1" className="dropdown-item">CSS</a>
+                            <div className="dropdown-divider"></div> 
+                            <a href="/articles/?sort=JavaScript&page=1" className="dropdown-item">JavaScript</a>
+                            <div className="dropdown-divider"></div> 
+                            <a href="/articles/?sort=NodeJS&page=1" className="dropdown-item">NodeJS</a>
+                            <div className="dropdown-divider"></div> 
+                            <a href="/articles/?sort=Python&page=1" className="dropdown-item">Python</a>
                         </div>
                     </li>
                     <div className="dropdown-divider"></div>      

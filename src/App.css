@@ -55,6 +55,9 @@
 .articleforms .form-control {
   width: auto;
 }
+.articleforms .form-select {
+  margin-left: 1em;
+}
 
 .authforms {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -158,17 +161,28 @@
   margin-top: 1em;
   color: #000009;
 }
+.main .active {
+  color: #2f637a;
+}
+.main .head {
+  text-transform: capitalize;
+}
 .mainart {
   background-color: #969E98;
   border: 2px solid #000009;
   color: #000009;
   border-radius: 6px;
   margin-bottom: 6px;
+  overflow-wrap: break-word;
 }
 .mainart:hover {
   color: #000009;
   text-decoration: none;
   background-color: #878E89;
+}
+.main .pages {
+  margin: 0.3em;
+  text-decoration: underline;
 }
 
 .navbar {

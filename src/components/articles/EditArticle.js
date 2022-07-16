@@ -9,6 +9,7 @@ export default function EditArticle(){
     const [article, setArticle] = useState([])
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
+    const [tag, setTag] = useState("")
     const [error, setError] = useState(false)
 
     useEffect(() => {
@@ -19,8 +20,9 @@ export default function EditArticle(){
                 setArticle(data)
                 setTitle(data.title)
                 setContent(data.content)   
+                setTag(data.tag)
             } else {
-                navigate("/articles/PageNotFound")
+                navigate("/PageNotFound")
             }
         }
         fetchData()
@@ -36,7 +38,8 @@ export default function EditArticle(){
 			},
             body: JSON.stringify({
                 title: title,
-                content: content
+                content: content,
+                tag: tag
             })
         })
         if (response.status === 200){
@@ -74,16 +77,27 @@ export default function EditArticle(){
                         <label htmlFor='content'>Article Content</label>
                         <textarea value={content} id='content' className="form-control" rows="12" placeholder="..." onChange={e => {setContent(e.target.value)}} required/>
                     </div>
-                    <a href={`/articles/${articleId}`} className="btn btn-primary">Go Back</a>
+                    <div className="form-group">
+                        <label htmlFor='tag'>Article Content: </label>
+                        <select id="tag" defaultValue={tag} onChange={e => {setTag(e.target.value)}} className="form-select">
+                            <option>General</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>JavaScript</option>
+                            <option>NodeJS</option>
+                            <option>Python</option>
+                        </select>
+                    </div>
+                    <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}><i className="fas fa-arrow-left"></i> Go Back</button>
                     <button className="btn btn-success" type="submit">Submit</button>
                 </form>
             </div>
         )    
     } else {
         return(
-            <main>
+            <div className="articleforms">
                 <h2><u>Error! Page Not Found</u></h2>
-            </main>
+            </div>
         )
     }
     

@@ -7,6 +7,7 @@ export default function CreateArticle(){
     const {currentUser} = useContext(CurrentUser)
     const [title, setTitle] = useState("")
     const [content, setContent] = useState("")
+    const [tag, setTag] = useState("General")
     const [error, setError] = useState(false)
 
     const postArticle = async e => {
@@ -19,7 +20,8 @@ export default function CreateArticle(){
 			},
             body: JSON.stringify({
                 title: title,
-                content: content
+                content: content,
+                tag: tag
             })
         })
         if (response.status === 200){
@@ -50,14 +52,25 @@ export default function CreateArticle(){
                         <label htmlFor='content'>Article Content</label>
                         <textarea value={content} id='content' className="form-control" rows="12" placeholder="Enter Article Content..." onChange={e => {setContent(e.target.value)}} required/>
                     </div>
-                    <a href="/articles" className="btn btn-primary">Go Back</a>
+                    <div className="form-group">
+                        <label htmlFor='tag'>Article Content: </label>
+                        <select id="tag" onChange={e => {setTag(e.target.value)}} className="form-select">
+                            <option defaultValue>General</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>JavaScript</option>
+                            <option>NodeJS</option>
+                            <option>Python</option>
+                        </select>
+                    </div>
+                    <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}><i className="fas fa-arrow-left"></i> Go Back</button>
                     <button className="btn btn-success" type="submit" value="Submit">Submit</button>                
                 </form>
             </div>
         )    
     } else {
         return(
-            <div className="articleforms container-fluid">
+            <div className="articleforms">
                 <h2><u>You must be logged in to create an article.</u></h2>
             </div>
         )
