@@ -46,6 +46,14 @@ export default function EditArticle(){
         }
       }
 
+    if(article.length === 0){
+        return(
+            <main className="article">
+                <h1>Loading...</h1>  
+            </main>       
+        )    
+    }
+
     if (currentUser?.user_id === article.user_id || currentUser?.role === "admin"){
         return (
             <div className="articleforms">

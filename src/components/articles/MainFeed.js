@@ -15,6 +15,14 @@ export default function MainFeed(){
         fetchData()
     }, [])
 
+    if(articles.length === 0){
+        return(
+            <main className="article">
+                <h1>Loading...</h1>  
+            </main>       
+        )    
+    }
+
     const formatArticles = articles.map((article, key) => {
         return(
             <div className="row justify-content-center mx-auto" key={key}>
