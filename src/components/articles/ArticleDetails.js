@@ -119,7 +119,6 @@ export default function ArticleDetails(){
                     {commentAuthor}
                 </div>    
             )
-            
         })
     }
 
@@ -135,7 +134,7 @@ export default function ArticleDetails(){
 
     return(
         <div className="articlecontainer container-fluid">
-            <a href="/articles"><i className="fas fa-arrow-left"></i> Go Back</a>
+            <button type="button" className="btn btn-primary" onClick={() => navigate(-1)}><i className="fas fa-arrow-left"></i> Go Back</button>
             <h2 className="articletitle">{article.title}</h2>
             <h4 className="articleauth">Written by: {article.artAuthor.first_name} {article.artAuthor.last_name}</h4>
             <blockquote className='blockquote'>
