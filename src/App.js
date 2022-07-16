@@ -3,6 +3,7 @@ import ArticleDetails from './components/articles/ArticleDetails';
 import CreateArticle from './components/articles/CreateArticle';
 import CurrentUserProvider from './contexts/currentUser';
 import EditArticle from './components/articles/EditArticle';
+import Footer from './components/Footer';
 import Home from './components/Home';
 import LoginForm from './components/users/LoginForm';
 import MainFeed from './components/articles/MainFeed';
@@ -15,7 +16,7 @@ import './App.css';
 function App() {
   const [loggedOut, setLoggedOut] = useState(false)
   return (
-    <div>
+    <main className='container-fluid'>
       <h1 className='header'>TechKnows Articles</h1>
       <>
         {loggedOut ? <div className="alert alert-info alert-dismissible m-auto" role="alert">
@@ -39,10 +40,11 @@ function App() {
             <Route path='/articles/:articleId/edit' element={<EditArticle />}/>
             <Route path='*' element={<NotFound />}/>
           </Routes>
+          <Footer /> 
         </Router>  
       </CurrentUserProvider>
      
-    </div>
+    </main>
   );
 }
 

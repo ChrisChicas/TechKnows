@@ -37,50 +37,27 @@ const LoginForm = () => {
 
   return (
 
-    <div className='container'>
-		<h3 className='my-4 mx-16 text-3xl font-bold'>Login</h3>  
-		<form className="mx-10" onSubmit={verification}>
-				<>
-					{error ? <div className="alert alert-danger alert-dismissible" role="alert">
-						Username or password incorrect.
-						<button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						</div> 
-					: null}
-				</>
-			<ul className="bg-white dark:bg-slate-900 rounded-lg px-6 py-8 ring-1 ring-slate-900/5 shadow-xl">
-				<li className="py-2 pl-2 border border-slate-300">
-					<label className="mr-2 text-blue" htmlFor="username">Username: </label>
-					<input
-					className="border-2 rounded-lg border-stone-300"
-					value={username}
-          			onChange={e => {setUserName(e.target.value)}}
-					type="text"
-					id="username"
-					placeholder="Enter Username"
-					required
-					/>
-				</li>
-				<li className="py-2 pl-2 border border-slate-300">
-					<label className="mr-2 text-blue" htmlFor="password">Password: </label>
-					<input
-					className="border-2 rounded-lg border-stone-300"
-					value={password}
-					onChange={e => {setPassword(e.target.value)}}
-					type="password"
-					id="password"
-					placeholder="Enter Password"
-					required
-					/>
-									
-				</li>
-			</ul>
-			<button 
-					className="hover:bg-indigo-500 my-4 inline-flex items-center justify-center p-2 bg-indigo-400 rounded-md shadow-lg"
-					type="submit">
-					Login
-			</button>
+    <div className='authforms'>
+		<h2><u>Login</u></h2>  
+		<form onSubmit={verification}>
+			<>
+				{error ? <div className="alert alert-danger alert-dismissible" role="alert">
+					Username or password incorrect.
+					<button type="button" className="close" onClick={() => {setError(false)}} data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					</div> 
+				: null}
+			</>
+			<div className="form-group">
+				<label htmlFor="username">Username: </label>
+				<input className="form-control" value={username} onChange={e => {setUserName(e.target.value)}} type="text" id="username" placeholder="Enter Username" required/>	
+			</div>
+			<div className="form-group">
+				<label htmlFor="password">Password: </label>
+				<input className="form-control" value={password} onChange={e => {setPassword(e.target.value)}} type="password" id="password" placeholder="Enter Password" required/>		
+			</div>			
+			<button className="btn btn-success" type="submit" value="Submit">Login</button>
 		</form>
 		</div>
 
