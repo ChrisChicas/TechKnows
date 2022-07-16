@@ -32,7 +32,7 @@ export default function ArticleDetails(){
                 'Content-Type': 'application/json'
 			}
         })
-        navigate("/articles")
+        navigate(-1)
     }
 
     const createComment = async e => {
