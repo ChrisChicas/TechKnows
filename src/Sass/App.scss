@@ -4,13 +4,14 @@ $main-nav: #A9B2AC;
 $alt-nav: #969E98;
 $dark-nav: #878E89;
 $white: #FFFFFF;
+$main-font: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 .alert{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
 }
 
 .articlecontainer{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
     color: $main-black;
 
     a{
@@ -55,7 +56,7 @@ $white: #FFFFFF;
 }
 
 .articleforms{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
     color: $main-black;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -77,8 +78,7 @@ $white: #FFFFFF;
 }
 
 .authforms{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: $main-black;
+    font-family: $main-font;
     margin-top: 1em;
     margin-bottom: 1em;
     padding-left: 1em;
@@ -134,7 +134,7 @@ $white: #FFFFFF;
     }
 
     h3{
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: $main-font;
         font-size: 1.5em;
         color: white;
     } 
@@ -146,7 +146,7 @@ $white: #FFFFFF;
 }
 
 .header{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
     font-size: 2.7em;
     background-color: $main-blue;
     color: $white;
@@ -161,7 +161,7 @@ $white: #FFFFFF;
     display: flex;
     flex-direction: column;
     background-color: $white;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
     color: $main-black;
 
     h2{
@@ -180,7 +180,7 @@ $white: #FFFFFF;
 }
 
 .main{
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
     text-align: center;
     margin-top: 1em;
     color: $main-black;
@@ -224,7 +224,7 @@ $white: #FFFFFF;
         padding: 5px;
         display: inline;
         margin-left: 25px;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: $main-font;
         text-transform: uppercase;
         color: $main-black;
 
@@ -261,7 +261,7 @@ $white: #FFFFFF;
         display: inline;
         margin-left: 25px;
         margin-right: 0;
-        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: $main-font;
         text-transform: uppercase;
         color: $main-black;
 
@@ -284,7 +284,7 @@ $white: #FFFFFF;
     font-size: 2em;
     margin-left: 25px;
     margin-bottom: 0;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: $main-font;
     color: $main-black;
     border: 2px solid $main-black;
     border-radius: 6px;
