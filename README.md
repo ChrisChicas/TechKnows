@@ -1,7 +1,7 @@
 # TechKnows
 TechKnows is a free tech article app where users can view articles or log in to create articles and leave comments on them!
 
-## Deployment Links
+## Important Links
 - TechKnows-API Repo: [Link](https://github.com/ChrisChicas/TechKnows-API/)
 - Front-End Deployed on Heroku: [Link](https://techknows.herokuapp.com)
 - Back-End Deployed on Heroku: [Link](https://techknows-api.herokuapp.com)
